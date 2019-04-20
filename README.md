@@ -4,7 +4,7 @@
 
 ## Introduction
 
-> A simple Vuejs SPA that fetch a user list using an API with axios & allows to search the users by name plus click on each one of them and see their details info
+> A simple Vuejs SPA that fetch an user list using an API with axios & allows to search the users by name plus click on each one of them and see their details info.
 
 ## Install these dependencie before continuing
 
