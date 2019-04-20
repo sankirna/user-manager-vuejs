@@ -9,6 +9,7 @@
 ## Install these dependencie before continuing
 
 -  [Nodejs version](https://nodejs.org/en/) - version 10.15.3
+-  [Vue CLI](https://cli.vuejs.org/) -version 3.5.5
 -  [json-server version](https://github.com/typicode/json-server) - version 0.14.2
 
 ## Installation
