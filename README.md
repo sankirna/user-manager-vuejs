@@ -28,8 +28,9 @@ This will install the ```node-modules``` folder & the ```package.json``` depende
 npm run serve
 ```
 This should launch the app in a local server. Check the local sever in the console, grab the url, copy/paste in your browser like so:
+**(your localhost port could be different, please check the console)**
 
-``` http://localhost:8081/users```
+``` http://localhost:8081/```
 
 Now you should be able to see the app, but there is no users yet because we need to open another console and run the command: 
 
