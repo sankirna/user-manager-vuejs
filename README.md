@@ -1,29 +1,41 @@
-# router-test
+# TrackTick Challenge
 
-## Project setup
+# User Database App
+
+## Introduction
+
+> A simple Vuejs SPA that fetch a user list using an API with axios & allows to search the users by name plus click on each one of them and see their details info
+
+## Install these dependencie before continuing
+
+-  [Nodejs version](https://nodejs.org/en/) - version 10.15.3
+-  [json-server version](https://github.com/typicode/json-server) - version 0.14.2
+
+## Installation
+
+**- Go to the project's root folder and run the command:**
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+This will install the ```node-modules``` folder & the ```package.json``` dependencies.
+
+**- After that, run the command:**
+
 ```
 npm run serve
 ```
+This should launch the app in a local server. Check the local sever in the console, grab the url, copy/paste in your browser like so:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+``` http://localhost:8081/users```
 
-### Run your tests
-```
-npm run test
-```
+Now you should be able to see the app, but there is no users yet because we need to open another console and run the command: 
 
-### Lints and fixes files
-```
-npm run lint
-```
+```json-server --watch db.json```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Refresh the browser after is done. This will fetch the user list from db.json to the browser.
+
+Now you can play with it! :)
+
+
