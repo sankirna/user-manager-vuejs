@@ -12,7 +12,7 @@
     </b-navbar>
     
     <!-- List Rendering the response data  -->
-      <div v-if="userNum > 1">
+      <div v-if="userNum > 0">
         <div class="container my-3">
           <div v-for="(user, index) in filteredUsers" :key="index" class="users">
             <div class="p-4 m-0 border"><span>{{ index + 1 }} -</span> {{ user.title }}
