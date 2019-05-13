@@ -34,9 +34,7 @@ export default {
     methods: {
         getUser(id) {
             axios.get('http://localhost:3000/users/' + id).then(response => {
-                console.log(response.data)
                 this.users = response.data
-                console.log(this.users)
                 // console.log an error if get() method is unsuccessful
                 }).catch(err => {
                 console.log(err)
