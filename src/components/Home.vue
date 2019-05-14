@@ -1,7 +1,7 @@
 <template>
   <div class="users-list">
-    <!-- Navbar section -->
 
+    <!-- Navbar section -->
     <b-navbar toggleable="lg" type="dark" variant="info">
       <div class="container">
         <b-navbar-brand href="#" class="text-uppercase">User List</b-navbar-brand>
@@ -18,11 +18,13 @@
             <div class="p-4 m-0 border"><span>{{ index + 1 }} -</span> {{ user.title }}
 
               <!-- Delete button -->
-              <b-button @click="deleteUser()" variant="danger" class="float-right py-1 px-3 ml-3">Delete User</b-button>
+              <button type="button" class="float-right btn btn-danger py-1 px-3 ml-3" @click="showModal">Delete</button>
+              <!-- Modal Confirmation to Delete User -->
+              <modal class="row justify-content-center" v-show="isModalVisible" @close="closeModal" @deleteItem="deleteUser" />
 
               <!-- Routed button to user details -->
               <router-link :to="'/users/'+ user.id">
-                <b-button variant="success" class="float-right py-1 px-3">User Details</b-button>
+                <b-button variant="success" class="float-right py-1 px-3">Details</b-button>
               </router-link>
             </div>
           </div>
@@ -38,20 +40,33 @@
 
 // import axios
 import axios from 'axios'
+// Modal Delete User Confirmation importing Component
+import modal from './modal.vue';
 
 export default {
   name: 'Home',
+  components: {
+    modal
+  },
   data(){
     return {
       users: [],
-      searchUsers: ''
+      searchUsers: '',
+      isModalVisible: false
     }
   },
   methods: {
     // Delete an user
     deleteUser(index) {
       this.users.splice(index, 1)
+      this.closeModal()
     },
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    }
   },
   computed: {
     // custom search box for user names
