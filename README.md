@@ -1,6 +1,6 @@
-# TrackTick Challenge
+# admin-user-app-vuejs
 
-# User Database App
+# User Management App
 
 ## Introduction
 
