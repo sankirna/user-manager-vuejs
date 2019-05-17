@@ -1,5 +1,3 @@
-# admin-user-app-vuejs
-
 # User Management App
 
 ## Introduction
