@@ -4,10 +4,10 @@
     <!-- Navbar section -->
     <b-navbar toggleable="lg" type="dark" variant="info">
       <div class="container">
-        <b-navbar-brand href="#" class="text-uppercase">User List</b-navbar-brand>
+        <b-navbar-brand href="#" class="text-uppercase">User Management Tool</b-navbar-brand>
 
         <!-- Custom Search filter markup -->
-        <b-form-input size="sm" class="col-6 col-sm-6 col-md-4 col-lg-3 ml-auto" placeholder="Search Users..." v-model="searchUsers"></b-form-input>
+        <b-form-input size="sm" class="col-6 col-sm-6 col-md-4 col-lg-3 ml-auto" placeholder="Search user by name..." v-model="searchUsers"></b-form-input>
       </div>
     </b-navbar>
     
@@ -15,7 +15,7 @@
       <div v-if="userNum > 0">
         <div class="container my-3">
           <div v-for="(user, index) in filteredUsers" :key="index" class="users">
-            <div class="p-4 m-0 border"><span>{{ index + 1 }} -</span> {{ user.title }}
+            <div class="p-4 m-0 border"><span>{{ index + 1 }} -</span> {{ user.fullName }}
 
               <!-- Delete button -->
               <button type="button" class="float-right btn btn-danger py-1 px-3 ml-3" @click="showModal">Delete</button>
@@ -37,7 +37,6 @@
 </template>
 
 <script>
-console.log(users)
 // import axios
 import axios from 'axios'
 // imports user.json file
@@ -76,22 +75,13 @@ export default {
     // custom search box for user names
     filteredUsers() {
       return this.users.filter(user => {
-        return user.title.toLowerCase().match(this.searchUsers)
+        return user.fullName.toLowerCase().match(this.searchUsers)
       })
     },
     // Check for user numbers
     userNum() {
       return this.users.length 
     }
-  },
-  // life cycle hook - calls axios
-  created(){
-    axios.get('http://localhost:3000/users').then(response => {
-      this.users = response.data
-      // console.log an error if get() method is unsuccessful
-    }).catch(err => {
-      console.log(err)
-    })
   },
 }
 </script>
