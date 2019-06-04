@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop container-fluid">
-      <div class="modal " role="dialog">
+      <div class="modal" role="dialog">
         <section class="modal-body">
           <slot name="body">
             Are you sure you want to delete this user?
