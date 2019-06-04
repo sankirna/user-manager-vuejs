@@ -37,8 +37,6 @@
 </template>
 
 <script>
-// import axios
-import axios from 'axios'
 // imports user.json file
 import users from './../assets/users.json'
 // Modal Delete User Confirmation importing Component

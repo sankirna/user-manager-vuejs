@@ -22,8 +22,6 @@
 </template>
 
 <script>
-// imports axios
-import axios from 'axios'
 // imports user.json file
 import users from './../assets/users.json'
 
