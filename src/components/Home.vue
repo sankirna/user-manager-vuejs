@@ -37,9 +37,11 @@
 </template>
 
 <script>
-
+console.log(users)
 // import axios
 import axios from 'axios'
+// imports user.json file
+import users from './../assets/users.json'
 // Modal Delete User Confirmation importing Component
 import modal from './modal.vue';
 
@@ -50,7 +52,7 @@ export default {
   },
   data(){
     return {
-      users: [],
+      users: users,
       searchUsers: '',
       isModalVisible: false
     }
@@ -91,9 +93,6 @@ export default {
       console.log(err)
     })
   },
-  mounted() {
-    
-  }
 }
 </script>
 
