@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import components to router
+// imports components to router
 import Home from '@/components/Home.vue'
+// imports userProfile component
 import UserProfile from '@/components/UserProfile.vue'
 
 Vue.use(Router)
@@ -17,7 +18,7 @@ export default new Router({
     },
     // route to user profile matching id 
     {
-      path: '/users/:id',
+      path: '/user/:id',
       name: 'UserProfile',
       component: UserProfile
     }

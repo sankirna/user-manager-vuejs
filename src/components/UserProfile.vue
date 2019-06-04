@@ -10,13 +10,13 @@
 
         <!-- User details -->
         <div class="user-details container mt-4">
-            <div class="user-title"><strong>User Title: </strong>{{ users.title }}</div>
-            <img :src="users.images[0]" alt="" width="300" class="border my-3">
-            <p class=""><strong>Street:</strong>  {{ users.address.street }}</p>
-            <p class=""><strong>Zip Code:</strong>  {{ users.address.zipCode }}</p>
-            <p class=""><strong>City:</strong>  {{ users.address.city }}</p>
-            <p class=""><strong>State:</strong> {{ users.address.state }}</p>
-            <p class=""><strong>Country:</strong> {{ users.address.country }}</p>
+            <div v-for="(user, id) in users" :key="id">
+                <div class="user-title"><strong>User Title: </strong>{{ user.jobTitle }}</div>
+                <p class=""><strong>Street:</strong>  {{ user.fullName }}</p>
+                <p class=""><strong>Zip Code:</strong>  {{ user.email }}</p>
+                <p class=""><strong>City:</strong>  {{ user.phoneNumber }}</p>
+                <p class=""><strong>State:</strong> {{ user.address }}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -34,19 +34,9 @@ export default {
            users: users,
         }
     },
-    methods: {
-        getUser(id) {
-            axios.get('http://localhost:3000/users/' + id).then(response => {
-                this.users = response.data
-                // console.log an error if get() method is unsuccessful
-                }).catch(err => {
-                console.log(err)
-            })
-        }
-    },
-    // life cycle hook - calls axios
+    // life cycle hook
     created(){
-        this.getUser(this.$route.params.id)
+        this.getUser(this.$route.id)
     },
 }
 </script>

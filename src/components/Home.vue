@@ -23,7 +23,7 @@
               <modal class="row justify-content-center" v-show="isModalVisible" @close="closeModal" @deleteItem="deleteUser" />
 
               <!-- Routed button to user details -->
-              <router-link :to="'/users/'+ user.id">
+              <router-link :to="'/user/'+ user.id">
                 <b-button variant="success" class="float-right py-1 px-3">Details</b-button>
               </router-link>
             </div>
