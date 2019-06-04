@@ -32,7 +32,7 @@
       </div>
     
       <!-- Warning message when no users -->
-      <b-alert v-else class="container my-3" variant="warning" show>There are no any users!</b-alert>
+      <b-alert v-else class="container my-3" variant="warning" show>There are no users currently!</b-alert>
   </div>
 </template>
 
@@ -61,9 +61,11 @@ export default {
       this.users.splice(index, 1)
       this.closeModal()
     },
+    // open modal
     showModal() {
       this.isModalVisible = true;
     },
+    // close modal
     closeModal() {
       this.isModalVisible = false;
     }
