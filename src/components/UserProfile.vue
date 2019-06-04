@@ -10,13 +10,11 @@
 
         <!-- User details -->
         <div class="user-details container mt-4">
-            <div v-for="(user, id) in users" :key="id">
                 <div class="user-title"><strong>User Title: </strong>{{ user.jobTitle }}</div>
                 <p class=""><strong>Street:</strong>  {{ user.fullName }}</p>
                 <p class=""><strong>Zip Code:</strong>  {{ user.email }}</p>
                 <p class=""><strong>City:</strong>  {{ user.phoneNumber }}</p>
                 <p class=""><strong>State:</strong> {{ user.address }}</p>
-            </div>
         </div>
     </div>
 </template>
@@ -29,7 +27,20 @@ export default {
     name: 'UserProfile',
     data(){
         return {
+            user:{},
            users: users,
+        }
+    },
+    methods: {
+        var self=this;
+        getUser:function(userId)
+        {
+       users.forEach(function(userObj){
+            if(userObj.id==userId)
+            {
+                self.user=userObj;
+            }
+           } );
         }
     },
     // life cycle hook
